@@ -23,6 +23,7 @@ defmodule BackendWeb.Router do
     pipe_through :api
 
     get "/ping", ContextController, :ping
+    post "/ping/:id", ContextController, :ping_post
   end
 
   # Other scopes may use custom stacks.

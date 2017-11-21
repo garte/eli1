@@ -6,6 +6,7 @@
         </header>
         <main>
             {{msg}}
+            DAS
             <hello></hello>
             <button @click="send">Send</button>
         </main>
@@ -30,7 +31,11 @@
         methods: {
             send() {
                 this.msg = "Again, hi."
-                http.get('/ping').then(console.debug)
+                http.get('/ping').then((response) => {
+                    this.msg = response.data.ping
+                })
+
+
             }
         },
         components: {
