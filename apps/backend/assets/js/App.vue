@@ -5,15 +5,34 @@
             <h1>Phoenix Vue</h1>
         </header>
         <main>
+            {{msg}}
             <hello></hello>
+            <button @click="send">Send</button>
         </main>
     </div>
 </template>
 
 <script>
+    import axios from 'axios'
+
+    let http = axios.create({
+        baseURL: 'http://localhost:4000/api/v1'
+    });
+
     import Hello from './components/Hello'
     export default {
         name: 'app',
+        data() {
+            return {
+                msg: "Hi. There."
+            }
+        },
+        methods: {
+            send() {
+                this.msg = "Again, hi."
+                http.get('/ping').then(console.debug)
+            }
+        },
         components: {
             Hello
         }
