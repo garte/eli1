@@ -2,7 +2,7 @@
 <template>
     <div>
         <h3>Hello from Vue.js!</h3>
-        <p>{{msg}} tach</p>
+        <p>{{msg}}</p>
     </div>
 </template>
 

@@ -55,5 +55,5 @@ config :backend, Backend.Repo,
   username: "postgres",
   password: "postgres",
   database: "backend_dev",
-  hostname: "localhost",
+  hostname: "postgres",
   pool_size: 10
